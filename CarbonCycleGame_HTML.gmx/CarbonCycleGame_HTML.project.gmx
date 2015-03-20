@@ -61,6 +61,11 @@
     <sprite>sprites\spr_factory</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_radio</sprite>
+    <sprite>sprites\spr_green_ninja_portrait</sprite>
+    <sprite>sprites\spr_cashbar</sprite>
+    <sprite>sprites\spr_scorebar</sprite>
+    <sprite>sprites\spr_ammobar_outline_oak</sprite>
+    <sprite>sprites\spr_ammobar_oak</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>

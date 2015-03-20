@@ -67,7 +67,7 @@ if y &gt; room_height - 200
     if obj_CO_level_gauge.red_level &gt; 0
     global.temperature += 1
     
-    global.carbon += 10
+    global.carbon += 20
     instance_destroy()
     }
 
