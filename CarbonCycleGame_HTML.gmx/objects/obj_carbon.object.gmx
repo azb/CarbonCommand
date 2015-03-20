@@ -72,9 +72,9 @@ if y &gt; room_height - 200
     }
 
 if x &lt; 20
-hspeed = abs(hspeed)
+    hspeed = abs(hspeed)
 if x &gt; room_width - 20
-hspeed = -abs(hspeed)
+    hspeed = -abs(hspeed)
 </string>
           </argument>
         </arguments>

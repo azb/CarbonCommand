@@ -60,6 +60,7 @@
     <sprite>sprites\spr_ammo_bar_small</sprite>
     <sprite>sprites\spr_factory</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_radio</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -151,6 +152,9 @@
     </scripts>
     <script>scripts\adjust.gml</script>
     <script>scripts\button.gml</script>
+    <script>scripts\scr_start_stage.gml</script>
+    <script>scripts\draw_text_outlined.gml</script>
+    <script>scripts\button_tab.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>

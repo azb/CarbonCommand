@@ -76,7 +76,9 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
+            <string>if obj_control.gameover = 0
+{
+/*
 
     {
     if distance_to_point(mouse_x,mouse_y) &lt; 48 and ammo &lt; ammo_max {
@@ -103,7 +105,7 @@ image_speed = 0
             instance_destroy()
         }
     
-
+}
 </string>
           </argument>
         </arguments>
@@ -126,7 +128,9 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
+            <string>
+if obj_control.gameover = 0
+{
 draw_text(x, y+32, string(ammo))
 draw_sprite(spr_ammo_bar_small,ammo,x,y+80)
 
@@ -139,6 +143,9 @@ if instance_nearest(mouse_x,mouse_y,obj_tree) = id
     draw_line(mouse_x,mouse_y-20,mouse_x,mouse_y+20)
     draw_line(x,y,mouse_x,mouse_y)
     }
+}
+draw_self()
+
 </string>
           </argument>
         </arguments>
