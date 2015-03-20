@@ -33,8 +33,8 @@ global.cash = 0 //100000
 scr_start_stage()
 tab = 0
 
-carbon_left = 0
-alarm[0] = -1
+//carbon_left = 0
+//alarm[0] = -1
 
 answer = -1
 correct_answer = 2
@@ -103,6 +103,8 @@ if background_y[2] &gt; actual_back_y // = adjust(background_y[2] , actual_back_
 background_y[2] -= .5
 
 actual_back_y = by_start - global.carbon // 10 * 5
+if actual_back_y &lt; by_start - 200
+actual_back_y = by_start - 200
 
 if background_y[2] &lt; by_start - 500
 background_y[2] = by_start - 500
@@ -260,6 +262,7 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         if button(spr_button,room_width/2 - 160,room_height - 240, 320,48,'Submit',-1,0,'')
             {
             tab = 2
+            exit
             }
         for(i=0 ; i &lt; answers; i++)
             {
@@ -271,13 +274,35 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         }
     if tab = 2
         {
+        draw_set_halign(fa_center)
+        draw_set_valign(fa_center)  
         if answer = correct_answer
             {
-            draw_text_outlined(room_width/2 - 440 , room_height/2 - 200, "Correct!", c_black,c_white)
+            draw_text_outlined(room_width/2  , room_height/2 , 'Your answer "'+string_lower(answer_text[answer])+'" is correct!#Congratulations! You made $100 Carbon Cash!', c_black,c_lime)
         
             }
+        else
+            {
+            draw_text_outlined(room_width/2 , room_height/2 , 'Your answer "'+string_lower(answer_text[answer])+'" is incorrect.#:( Better luck next time!', c_black,c_red)
+        
+            }
+        if button(spr_button,room_width/2 - 160,room_height - 240, 320,48,'Continue',-1,0,'')
+            {
+            tab = 3
+            }
         }
-    
+    if tab = 3
+        {
+        draw_text_outlined(room_width/2 , room_height/2 - 200 , "Purchase Upgrades", c_white,c_black)
+        if button(spr_button,room_width - 480,room_height - 96, 320,48,'Start Next Stage',-1,0,'')
+            {
+            tab = 0
+            scr_start_stage()
+                        
+            with (obj_tree)
+            {ammo = ammo_max}
+            }
+        }
     }
 else
     {
