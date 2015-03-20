@@ -8,6 +8,7 @@
 //subimg=bpics image index//
 //name//
 //8 arguments//
+rshetsyr = argument8
 
 if argument9 = argument10 
     {
@@ -54,4 +55,3 @@ draw_set_valign(fa_center)
 draw_text(argument1+argument3/2,argument2+argument4/2,argument5)
 
 return down
-

@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>cfire = 1
 
-ammo_max = 8
-ammo = 8
+ammo_max = 12
+ammo = ammo_max
 
 image_speed = 0
 </string>

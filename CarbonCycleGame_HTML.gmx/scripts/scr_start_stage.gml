@@ -8,4 +8,4 @@ alarm[0] = 10
 global.temperature = 0
 global.carbon = 0
 instance_activate_object(obj_tree)
-
+answer = -1

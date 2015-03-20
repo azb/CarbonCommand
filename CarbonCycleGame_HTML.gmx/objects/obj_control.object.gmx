@@ -310,8 +310,8 @@ else
     draw_set_valign(fa_top)
     draw_set_color(c_red)
     draw_set_font(font1)
-    draw_text(20,background_y[2] + 800 - 20 - 255,"Sea Level")
-    draw_line(0 , background_y[2] + 800 - 255, room_width, background_y[2] + 800 - 255)
+    //draw_text(20,background_y[2] + 800 - 20 - 255,"Sea Level")
+    //draw_line(0 , background_y[2] + 800 - 255, room_width, background_y[2] + 800 - 255)
     
     //draw_sprite(spr_ice,0,-global.temperature / 10 * 256,room_height - 256)
     // draw_sprite_ext(spr_ice,0,room_width + global.temperature / 10 * 256,room_height - 256,-1,1,0,c_white,1)
