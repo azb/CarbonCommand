@@ -132,7 +132,7 @@ image_speed = 0
 if obj_control.gameover = 0
 {
 draw_text(x, y+32, string(ammo))
-draw_sprite(spr_ammo_bar_small,ammo,x,y+80)
+draw_sprite(spr_bullet,ammo,x,y+80)
 
 if instance_nearest(mouse_x,mouse_y,obj_tree) = id
     {
