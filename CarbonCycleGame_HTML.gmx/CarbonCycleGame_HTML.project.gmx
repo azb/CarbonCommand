@@ -60,12 +60,25 @@
     <sprite>sprites\spr_ammo_bar_small</sprite>
     <sprite>sprites\spr_factory</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_button_tab</sprite>
+    <sprite>sprites\spr_button_upgrade</sprite>
+    <sprite>sprites\spr_button_too_expensive</sprite>
     <sprite>sprites\spr_radio</sprite>
     <sprite>sprites\spr_green_ninja_portrait</sprite>
     <sprite>sprites\spr_cashbar</sprite>
     <sprite>sprites\spr_scorebar</sprite>
     <sprite>sprites\spr_ammobar_outline_oak</sprite>
+    <sprite>sprites\spr_select_highlight</sprite>
+    <sprite>sprites\spr_upgrade_ring</sprite>
+    <sprite>sprites\sprite33</sprite>
     <sprite>sprites\spr_ammobar_oak</sprite>
+    <sprite>sprites\sprite34_Thermometer</sprite>
+    <sprite>sprites\sprite35_Boat_Asset</sprite>
+    <sprite>sprites\spr_carbon_cash_bar</sprite>
+    <sprite>sprites\spr_score_bar</sprite>
+    <sprite>sprites\spr_message</sprite>
+    <sprite>sprites\spr_message_large</sprite>
+    <sprite>sprites\sprite38_OilRig_Asset</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -160,6 +173,13 @@
     <script>scripts\scr_start_stage.gml</script>
     <script>scripts\draw_text_outlined.gml</script>
     <script>scripts\button_tab.gml</script>
+    <script>scripts\scr_add_mouse_zone.gml</script>
+    <script>scripts\scr_in_mouse_zone.gml</script>
+    <script>scripts\scr_init_mouse_zones.gml</script>
+    <script>scripts\inregion.gml</script>
+    <script>scripts\scr_upgrade_item.gml</script>
+    <script>scripts\scr_paragraph_string.gml</script>
+    <script>scripts\scr_paragraph.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>

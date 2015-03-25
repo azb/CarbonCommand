@@ -31,6 +31,15 @@ ammo_max = 12
 ammo = ammo_max
 
 image_speed = 0
+
+selected = 0
+
+upgrades = 2
+
+upgrade[0] = "Rapid Shot Upgrade#Upgrade this slow-growing pine tree to a slightly faster growing oak tree to make it absorb more carbon!"
+upgrade[1] = "Double Shot Upgrade#Upgrade this oak tree to a faster growing yellow poplar tree to make it absorb even more carbon!"
+
+
 </string>
           </argument>
         </arguments>
@@ -130,22 +139,28 @@ image_speed = 0
             <kind>1</kind>
             <string>
 if obj_control.gameover = 0
-{
-draw_text(x, y+32, string(ammo))
-draw_sprite(spr_bullet,ammo,x,y+80)
-
-if instance_nearest(mouse_x,mouse_y,obj_tree) = id
     {
-    draw_set_color(c_black)
-    draw_circle(mouse_x,mouse_y,16,1)
-    draw_circle(mouse_x,mouse_y,2,1)
-    draw_line(mouse_x-20,mouse_y,mouse_x+20,mouse_y)
-    draw_line(mouse_x,mouse_y-20,mouse_x,mouse_y+20)
-    draw_line(x,y,mouse_x,mouse_y)
+    draw_text(x, y+32, string(ammo))
+    draw_sprite(spr_bullet,ammo,x,y+80)
+    
+    if instance_nearest(mouse_x,mouse_y,obj_tree) = id
+        {
+        draw_set_color(c_black)
+        draw_circle(mouse_x,mouse_y,16,1)
+        draw_circle(mouse_x,mouse_y,2,1)
+        draw_line(mouse_x-20,mouse_y,mouse_x+20,mouse_y)
+        draw_line(mouse_x,mouse_y-20,mouse_x,mouse_y+20)
+        draw_line(x,y,mouse_x,mouse_y)
+        }
     }
-}
-draw_self()
 
+
+    scr_upgrade_item()
+    
+    //draw_sprite_ext(sprite_index,0,x,y,1,1,0,c_yellow,obj_control.flash_a)
+
+    draw_self()
+    
 </string>
           </argument>
         </arguments>

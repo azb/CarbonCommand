@@ -11,6 +11,7 @@
 //8 arguments//
 down=0
 draw_set_color(c_black)
+scr_add_mouse_zone(argument1,argument2,argument1+argument3,argument2+argument4)
 draw_sprite_stretched_ext(argument0,0,argument1,argument2,argument3,argument4,c_white,1)
 if mouse_x>argument1 if mouse_y>argument2 
 if mouse_x<argument1+argument3 if mouse_y<argument2+argument4 
