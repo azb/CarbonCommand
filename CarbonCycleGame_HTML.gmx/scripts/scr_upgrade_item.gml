@@ -10,7 +10,8 @@ if obj_control.gameover && obj_control.tab = 3
         
         if image_index < upgrades
             {
-            cost = image_index * 25 + 50
+            
+            cost = image_index * upgrade_coefficient + upgrade_initial_cost
             if global.cash >= cost bspr = spr_button_upgrade else bspr = spr_button_too_expensive
                 draw_sprite(spr_message,0,x,y-300-50)
             draw_set_halign(fa_left)

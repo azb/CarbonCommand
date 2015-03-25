@@ -179,6 +179,7 @@
     <script>scripts\inregion.gml</script>
     <script>scripts\scr_upgrade_item.gml</script>
     <script>scripts\scr_paragraph_string.gml</script>
+    <script>scripts\scr_add_question.gml</script>
     <script>scripts\scr_paragraph.gml</script>
   </scripts>
   <fonts name="fonts">

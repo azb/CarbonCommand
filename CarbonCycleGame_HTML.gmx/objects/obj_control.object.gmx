@@ -32,13 +32,19 @@ flash_dir = .1
 
 draw_set_font(fnt_default)
 
-global.cash = 0 //100000
+//CARBON CASH
+global.cash = 0
+
+//C02 LEVELS
+global.carbon = 0
 
 scr_start_stage()
 tab = 0
 
-carbon_left = 0
-alarm[0] = -1
+level = 0
+
+//carbon_left = 0
+//alarm[0] = -1
 
 answer = -1
 correct_answer = 2
@@ -72,7 +78,8 @@ answer_text[3] = "Laughing"
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if carbon_left &gt; 0
+            <string>///CREATE C02
+if carbon_left &gt; 0
     {
     alarm[0] = 20
     instance_create(random(room_width) , -8 , obj_carbon)
@@ -104,12 +111,13 @@ answer_text[3] = "Laughing"
 if flash_a &lt; .2 flash_dir = .1
 flash_a += flash_dir
 
+//SEA LEVEL RISE
 if background_y[2] &lt; actual_back_y // = adjust(background_y[2] , actual_back_y)
-background_y[2] += .5
+background_y[2] += .25
 if background_y[2] &gt; actual_back_y // = adjust(background_y[2] , actual_back_y)
-background_y[2] -= .5
+background_y[2] -= .25
 
-actual_back_y = by_start - global.carbon // 10 * 5
+actual_back_y = by_start - global.carbon / 2 // 10 * 5
 if actual_back_y &lt; by_start - 200
 actual_back_y = by_start - 200
 
@@ -218,6 +226,7 @@ draw_set_halign(fa_right)
 draw_set_valign(fa_center)
 draw_text(240,50,'$ '+string(global.cash))
 draw_sprite(spr_score_bar,0,0,100)
+draw_text(240,50+100,string(score))
 
 if global.temperature &gt; 20 //LOSE
     {
@@ -338,7 +347,7 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
             {
             tab = 0
             scr_start_stage()
-                        
+            level++
             with (obj_tree)
             {ammo = ammo_max}
             }

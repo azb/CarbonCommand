@@ -40,7 +40,7 @@ carbon_level_string = "GREEN"
 carbon_string_color = c_green
 
 //CO_level = 0
-global.carbon = 0
+
 </string>
           </argument>
         </arguments>
