@@ -91,7 +91,7 @@ scr_add_question("The ozone hole causes extra heat that warms the planet and cau
     "",
     "",
     2)
-scr_add_question("Driving a car causes emissions of carbon dioxide into the atmosphere that warm the planet",
+scr_add_question("Driving a fossil fuel powered car causes emissions of carbon dioxide into the atmosphere that warm the planet",
     "True",
     "False",
     "",
@@ -318,7 +318,7 @@ draw_text(240,50,'$ '+string(global.cash))
 draw_sprite(spr_score_bar,0,0,100)
 draw_text(240,50+100,string(score))
 
-if global.temperature &gt; 20 //LOSE
+if actual_back_y &lt; by_start - 200 //global.temperature &gt; 20 //LOSE
     {
     gameover = 1
     draw_set_color(c_black)
@@ -387,7 +387,9 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         draw_set_font(fnt_message)
         draw_sprite(spr_message_large,0,room_width/2,room_height/2)
         draw_set_color(c_black)
-        draw_text(room_width/2 - 440 , room_height/2 - 200 + 50, "Answer this question correctly to get $100 more Carbon Cash!##"+question[current_question]) //, c_black,c_white)
+        //draw_text(room_width/2 - 440 , room_height/2 - 200 + 50, "Answer this question correctly to get $100 more Carbon Cash!##"+question[current_question]) //, c_black,c_white)
+        tstr = "Answer this question correctly to get $100 more Carbon Cash!##"+question[current_question]
+        scr_paragraph(tstr,room_width/2 - 440 , room_height/2 - 200 , 800, c_black)
         if answer &gt; -1
         if button(spr_button,room_width/2 - 160,room_height / 2 + 220, 320,48,'Submit',-1,0,'')
             {
@@ -404,37 +406,42 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         for(i=0 ; i &lt; answers; i++)
             {
             //spr_radio
+            if answer_text[current_question,i] &gt; ""
             if button_tab(spr_button_tab,room_width/2 - 420,room_height / 2 - 64 - 40 + 64 * i + 50,840,48,answer_text[current_question,i],-1,0,'',answer,i)
                 answer = i
             //draw_text(room_width/2 - 420 + 128,room_height / 2 - 64 - 40 + 64 * i + 24 + 50, answer_text[i]) //, c_black,c_white)
             }
         
         }
-    if tab = 2 //SHOW IF ANSWR IS CORRECT TAB
+    if tab = 2 //SHOW IF ANSWER IS CORRECT TAB
         {
         draw_sprite(spr_message_large,0,room_width/2,room_height/2)
         draw_set_halign(fa_center)
-        draw_set_valign(fa_center)  
+        draw_set_valign(fa_center)
+        draw_set_font(fnt_message)  
         if answer = correct_answer[current_question]
             {
             draw_text(room_width/2  , room_height/2 , 'Your answer "'+string_lower(answer_text[current_question,answer])+'" is correct!#Congratulations! You made $100 Carbon Cash!') //, c_black,c_lime)
-        
             }
         else
             {
             draw_text(room_width/2 , room_height/2 , 'Your answer "'+string_lower(answer_text[current_question,answer])+'" is incorrect.#:( Better luck next time!') //, c_black,c_red)
         
             }
-        if button(spr_button,room_width/2 - 160,room_height - 240, 320,48,'Continue',-1,0,'')
+        if button(spr_button,room_width/2 - 160,room_height / 2 + 220, 320,48,'Continue',-1,0,'')
             {
             tab = 3
+            current_question++
+            if current_question &gt;= 10
+            current_question = 0
             }
         }
     if tab = 3 //UPGRADES TAB
         {
+        draw_sprite(spr_message,0,room_width/2 , room_height/2 - 500)
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
-        draw_text_outlined(room_width/2 , room_height/2 - 400 , "Purchase Upgrades##Select an item to upgrade.", c_white,c_black)
+        draw_text_outlined(room_width/2 , room_height/2 - 430 , "Purchase Upgrades##Select an item to upgrade.", c_white,c_black)
         if button(spr_button,room_width - 480,room_height - 96, 320,48,'Start Next Stage',-1,0,'')
             {
             tab = 0

@@ -1,4 +1,4 @@
-//scr_paragraph(str,x,y,w,txtcolor)
+///scr_paragraph(str,x,y,w,txtcolor)
 //arguments     0   1 2 3 4
 
 temp_str1=argument0
