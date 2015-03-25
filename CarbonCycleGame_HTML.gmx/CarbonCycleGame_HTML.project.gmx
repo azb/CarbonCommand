@@ -184,6 +184,7 @@
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_default</font>
+    <font>fonts\fnt_message</font>
     <font>fonts\fnt_large</font>
     <font>fonts\font1</font>
   </fonts>

@@ -47,64 +47,74 @@ level = 0
 //alarm[0] = -1
 
 answer = -1
-correct_answer = 2
+//correct_answer = 2
 
 questions = 0
 
 question[0] = "What causes global warming?"
-current_question = 0
+current_question = irandom(10)
 answers = 4
 
 scr_add_question("Which of these is not a Greenhouse gas?",
     "Carbon dioxide (CO2)",
     "Methane (CH4)",
     "Oxygen (O2)",
-    "Nitrous Oxide")
+    "Nitrous Oxide",
+    3)
 scr_add_question("Sea levels are rising because",
     "Melting of sea ice",
     "Increases in rainfall",
     "Glaciers melting",
-    "All of the above")
+    "All of the above",
+    3)
 scr_add_question("Today’s current concentration of atmospheric carbon dioxide (CO2) is around",
     "100 ppm",
     "400 ppm",
     "1000 ppm",
-    "5000 ppm")
+    "5000 ppm",
+    2)
 scr_add_question("In the atmosphere, Carbon Dioxide is invisible",
     "True",
     "False",
     "",
-    "")
+    "",
+    1)
 scr_add_question("If carbon dioxide levels go up, the temperature of the atmosphere",
     "goes up",
     "goes down",
     "is not affected",
-    "goes up and then goes down")
+    "goes up and then goes down",
+    1)
 scr_add_question("The ozone hole causes extra heat that warms the planet and causes global warming",
     "True",
     "False",
     "",
-    "")
+    "",
+    2)
 scr_add_question("Driving a car causes emissions of carbon dioxide into the atmosphere that warm the planet",
     "True",
     "False",
     "",
-    "")
+    "",
+    1)
 scr_add_question("Which of the following is not an effect of global warming?",
     "melting ice",
     "rising sea levels",
     "volcanic eruptions",
-    "changes in weather patterns")
+    "changes in weather patterns",
+    3)
 scr_add_question("What is a fossil fuel?",
     "Coal",
     "Oil",
     "Natural Gas",
-    "All of the above")
+    "All of the above",
+    4)
 scr_add_question("What happens when we burn fossil fuels?",
     "Nothing",
     "We release carbon dioxide into the atmosphere",
     "A large fire",
-    "The Earth becomes colder")
+    "The Earth becomes colder",
+    2)
 
 /*
 answer_text[0] = "CO2"
@@ -374,15 +384,15 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         {
         draw_set_halign(fa_left)
         draw_set_valign(fa_center) 
-        draw_set_font(fnt_default)
+        draw_set_font(fnt_message)
         draw_sprite(spr_message_large,0,room_width/2,room_height/2)
         draw_set_color(c_black)
-        draw_text(room_width/2 - 440 , room_height/2 - 200 + 50, "Answer this question correctly to get $100 more Carbon Cash!##"+question) //, c_black,c_white)
+        draw_text(room_width/2 - 440 , room_height/2 - 200 + 50, "Answer this question correctly to get $100 more Carbon Cash!##"+question[current_question]) //, c_black,c_white)
         if answer &gt; -1
         if button(spr_button,room_width/2 - 160,room_height / 2 + 220, 320,48,'Submit',-1,0,'')
             {
             tab = 2
-            if answer = correct_answer
+            if answer = correct_answer[current_question]
                 {
                 global.cash += 100
                 }
@@ -405,14 +415,14 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         draw_sprite(spr_message_large,0,room_width/2,room_height/2)
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)  
-        if answer = correct_answer
+        if answer = correct_answer[current_question]
             {
-            draw_text(room_width/2  , room_height/2 , 'Your answer "'+string_lower(answer_text[answer])+'" is correct!#Congratulations! You made $100 Carbon Cash!') //, c_black,c_lime)
+            draw_text(room_width/2  , room_height/2 , 'Your answer "'+string_lower(answer_text[current_question,answer])+'" is correct!#Congratulations! You made $100 Carbon Cash!') //, c_black,c_lime)
         
             }
         else
             {
-            draw_text(room_width/2 , room_height/2 , 'Your answer "'+string_lower(answer_text[answer])+'" is incorrect.#:( Better luck next time!') //, c_black,c_red)
+            draw_text(room_width/2 , room_height/2 , 'Your answer "'+string_lower(answer_text[current_question,answer])+'" is incorrect.#:( Better luck next time!') //, c_black,c_red)
         
             }
         if button(spr_button,room_width/2 - 160,room_height - 240, 320,48,'Continue',-1,0,'')
