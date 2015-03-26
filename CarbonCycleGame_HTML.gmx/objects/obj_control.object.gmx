@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>absorbed = 0
+            <string>
+ninja_pos = 1
+absorbed = 0
 global.temperature = 0
 global.carbon = 0
 
@@ -48,8 +50,10 @@ scr_start_stage()
 by_init = by_start
 tab = 0
 
+started = 0
+gameover = -1
 //carbon_left = 0
-//alarm[0] = -1
+alarm[0] = -1
 
 answer = -1
 //correct_answer = 2
@@ -325,7 +329,30 @@ if keyboard_check_pressed(ord('D')) {
             <string>//if scr_in_mouse_zone()
 //draw_rectangle(0,0,128,128,0)
 scr_init_mouse_zones()
+draw_sprite(spr_green_ninja,0,room_width,room_height + 639* ninja_pos)
+if gameover = -1
+{
+ninja_pos = adjust(ninja_pos , 0)
+draw_sprite(spr_message_large,0,room_width/2,room_height + 64)
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+draw_set_color(c_black)
+draw_set_font(fnt_message)
+tstr = "Today's industry for energy is large, and includes coal fired power plants,"
+    +" gasoline powered vehicles and energy for homes and buildings. "+
+    "All this energy production is generating a lot of climate changing C02. Can I count "+
+    "on you to clean it up and save our planet?"
+//draw_text(room_width/2 - 480,room_height - 210,"Green Ninja: "+tstr)
+scr_paragraph("Green Ninja: "+tstr , room_width/2 - 480,room_height - 210 , 880 , c_black)
 
+if button(spr_button,room_width/2-160,room_height - 64, 320,48,'Start Game',-1,0,'')
+    {
+    gameover = 0
+    alarm[0] = 1
+    }
+}
+else
+{
 draw_set_font(fnt_default)
 draw_set_halign(fa_right)
 draw_set_valign(fa_center)
@@ -361,6 +388,13 @@ draw_rectangle(37,97,60,ypos,0)
 // - global.temperature / 20 * 130
 
 //if actual_back_y &lt; by_init - 250
+
+if tab = 1 || tab = 2
+ninja_pos = adjust(ninja_pos , 0)
+else
+ninja_pos = adjust(ninja_pos , 1)
+
+
 if actual_back_y &lt;= by_init - 200 //global.temperature &gt; 20 //LOSE
     {
     gameover = 1
@@ -369,7 +403,16 @@ if actual_back_y &lt;= by_init - 200 //global.temperature &gt; 20 //LOSE
     draw_set_valign(fa_center)    
     draw_set_font(fnt_large)
     draw_sprite(spr_message_large,0,room_width/2 , room_height/2)
-    draw_text(room_width/2 , room_height/2 - 96 , "Oh noes! Earth got flooded!##Final Score: "+string(score))
+    if score &gt;= global.high_score
+        {
+        global.high_score = score
+        tstr = "Oh noes! Earth got flooded!##Final Score: "+string(score)+"#New High Score!"
+        }
+    else
+        {
+        tstr = "Oh noes! Earth got flooded!##Final Score: "+string(score)+"#High Score: "+string(high_score)
+        }
+    draw_text(room_width/2 , room_height/2 - 96 , tstr)
     draw_set_font(fnt_default)
     if button(spr_button,room_width/2-160,room_height/2 + 128, 320,48,'Play Again',-1,0,'')
         {
@@ -377,6 +420,7 @@ if actual_back_y &lt;= by_init - 200 //global.temperature &gt; 20 //LOSE
         //global.carbon = 0
         //scr_start_stage()
         room_restart()
+        score = 0
         }
     }
 else
@@ -521,6 +565,7 @@ else
     //global.temperature = global.carbon / 20 //instance_number(obj_carbon) / 10
      //top = 50
     }
+}
 }
 
 </string>

@@ -107,7 +107,12 @@ else if global.carbon &gt; 200 and global.carbon &lt;= 300 {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if green_level &lt;= 100{
+            <string>if obj_control.gameover != -1
+{
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+draw_set_font(font1)
+if green_level &lt;= 100{
     draw_rectangle_colour(x1,y1,x1+(green_level*(gauge_max/level_max)),y2,c_green,c_green,c_green,c_green,0)
     carbon_level_string = "GREEN"
     carbon_string_color = c_green
@@ -124,7 +129,9 @@ if red_level &gt; 0 {
 }
 
 draw_rectangle_colour(x1,y1,x2,y2,c_black,c_black,c_black,c_black,1)
-draw_text_colour(x1,y2+24,"Carbon Level: " + carbon_level_string,carbon_string_color,carbon_string_color,carbon_string_color,carbon_string_color,255)
+draw_text_colour(x1-6,y2+18,"Carbon Level: " + carbon_level_string,carbon_string_color,carbon_string_color,carbon_string_color,carbon_string_color,255)
+
+}
 </string>
           </argument>
         </arguments>

@@ -31,4 +31,3 @@ temp_charpos+=1
 }
 
 return temp_str2
-
