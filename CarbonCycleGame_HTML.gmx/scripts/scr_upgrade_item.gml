@@ -1,3 +1,4 @@
+
 if obj_control.gameover && obj_control.tab = 3
     {
     draw_sprite_ext(spr_upgrade_ring,0,x,y,1,1,0,c_white,obj_control.flash_a)

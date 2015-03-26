@@ -53,6 +53,7 @@
     <sprite>sprites\spr_tree2</sprite>
     <sprite>sprites\spr_tree3</sprite>
     <sprite>sprites\spr_coral</sprite>
+    <sprite>sprites\spr_thermometer2</sprite>
     <sprite>sprites\spr_thermometer</sprite>
     <sprite>sprites\spr_ice</sprite>
     <sprite>sprites\spr_leaf_explosion</sprite>
@@ -72,7 +73,6 @@
     <sprite>sprites\spr_upgrade_ring</sprite>
     <sprite>sprites\sprite33</sprite>
     <sprite>sprites\spr_ammobar_oak</sprite>
-    <sprite>sprites\sprite34_Thermometer</sprite>
     <sprite>sprites\sprite35_Boat_Asset</sprite>
     <sprite>sprites\spr_carbon_cash_bar</sprite>
     <sprite>sprites\spr_score_bar</sprite>

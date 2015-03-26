@@ -5,8 +5,7 @@ carbon_left = 30
 carbon_start = carbon_left
 gameover = 0
 alarm[0] = 10
-global.temperature = 0
-global.carbon = 0
+//global.temperature = 0
+//global.carbon = 0
 instance_activate_object(obj_tree)
 answer = -1
-

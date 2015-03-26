@@ -25,7 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_init_mouse_zones()
+            <string>global.temperature = 0
+global.carbon = 0
+
+scr_init_mouse_zones()
 
 flash_a = .5
 flash_dir = .1
@@ -213,7 +216,7 @@ actual_back_y = by_start - 200
 
 if background_y[2] &lt; by_start - 500
 background_y[2] = by_start - 500
-
+/*
 if keyboard_check_pressed(vk_left) {
     with obj_tree
     {
@@ -233,6 +236,7 @@ if keyboard_check_pressed(vk_left) {
                 }
     }
 }
+
 if keyboard_check_pressed(vk_up) {
     with obj_tree 
     {
@@ -280,7 +284,7 @@ if keyboard_check_pressed(ord('D')) {
     if current_question &gt; 0
     current_question--   
 }
-/*
+
 if keyboard_check_pressed(ord('A')) {
     with obj_CO_level_gauge {
         if CO_level &gt;= 10
@@ -319,13 +323,35 @@ if keyboard_check_pressed(ord('D')) {
 //draw_rectangle(0,0,128,128,0)
 scr_init_mouse_zones()
 
-draw_sprite(spr_carbon_cash_bar,0,0,0)
 draw_set_font(fnt_default)
 draw_set_halign(fa_right)
 draw_set_valign(fa_center)
+
+//Carbon Cash
+
+draw_sprite(spr_carbon_cash_bar,0,0,0)
 draw_text(240,50,'$ '+string(global.cash))
+
+//Score
+
 draw_sprite(spr_score_bar,0,350,0)
 draw_text(350+240,50,string(score))
+
+//Thermometer
+
+draw_sprite(spr_thermometer , 0 ,0,80)
+draw_set_color(c_white)
+//draw_rectangle(62,180 - global.temperature / 20 * 130 ,70,180,0)
+
+ypos= 279 - global.temperature / 20 * 182
+if ypos &lt; 97
+ypos = 97
+draw_rectangle(37,97,60,ypos,0)
+
+//Show mouse position coordinates
+//draw_set_halign(fa_left)draw_set_valign(fa_right)draw_text(mouse_x+32,mouse_y+32,string(mouse_x)+","+string(mouse_y))
+
+// - global.temperature / 20 * 130
 
 if actual_back_y &lt; by_start - 200 //global.temperature &gt; 20 //LOSE
     {
@@ -346,8 +372,7 @@ if actual_back_y &lt; by_start - 200 //global.temperature &gt; 20 //LOSE
 else
 {
 if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
-    {   
-    
+    {
     //draw_set_alpha(.4)
     //draw_set_color(c_black)
     //draw_rectangle(0,0,room_width,room_height,0)
@@ -430,6 +455,7 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
         draw_set_font(fnt_message)  
+        draw_set_color(c_black)
         if answer = correct_answer[current_question]
             {
             draw_text(room_width/2  , room_height/2 , 'Your answer "'+string_lower(answer_text[current_question,answer])+'" is correct!#Congratulations! You made $100 Carbon Cash!') //, c_black,c_lime)
@@ -475,14 +501,11 @@ else
     //draw_sprite(spr_ice,0,-global.temperature / 10 * 256,room_height - 256)
     // draw_sprite_ext(spr_ice,0,room_width + global.temperature / 10 * 256,room_height - 256,-1,1,0,c_white,1)
     
-    draw_sprite(spr_thermometer , 0 ,50,50)
+    //draw_text(100,50,"Score: "+string(score))
+    //draw_text(100,80,"Carbon Cash: $"+string(global.cash))
     
-    draw_text(100,50,"Score: "+string(score))
-    draw_text(100,80,"Carbon Cash: $"+string(global.cash))
-    
-    draw_set_color(c_red)
     //global.temperature = global.carbon / 20 //instance_number(obj_carbon) / 10
-    draw_rectangle(62,180 - global.temperature / 20 * 130 ,70,180,0) //top = 50
+     //top = 50
     }
 }
 
