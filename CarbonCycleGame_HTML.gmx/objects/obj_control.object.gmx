@@ -67,7 +67,7 @@ scr_add_question("Sea levels are rising because",
     "Glaciers melting",
     "All of the above",
     3)
-scr_add_question("Today’s current concentration of atmospheric carbon dioxide (CO2) is around",
+scr_add_question("Today's current concentration of atmospheric carbon dioxide (CO2) is around",
     "100 ppm",
     "400 ppm",
     "1000 ppm",
@@ -273,6 +273,15 @@ if keyboard_check_pressed(vk_right) {
 }
 
 if keyboard_check_pressed(ord('A')) {
+    if current_question &lt; 9
+    current_question++
+}
+if keyboard_check_pressed(ord('D')) {
+    if current_question &gt; 0
+    current_question--   
+}
+/*
+if keyboard_check_pressed(ord('A')) {
     with obj_CO_level_gauge {
         if CO_level &gt;= 10
             CO_level -= 10
@@ -315,8 +324,8 @@ draw_set_font(fnt_default)
 draw_set_halign(fa_right)
 draw_set_valign(fa_center)
 draw_text(240,50,'$ '+string(global.cash))
-draw_sprite(spr_score_bar,0,0,100)
-draw_text(240,50+100,string(score))
+draw_sprite(spr_score_bar,0,350,0)
+draw_text(350+240,50,string(score))
 
 if actual_back_y &lt; by_start - 200 //global.temperature &gt; 20 //LOSE
     {
@@ -359,7 +368,7 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         draw_set_font(fnt_default)
         draw_text_outlined(room_width/2 , room_height/2 + 96 - 50 , "CO2 Absorbed: "+string(carbon_start - global.temperature)+'/'+string(carbon_start)
             +"#Carbon Cash: $"+string(global.cash), c_white,c_black)
-        if button(spr_button,room_width/2 - 160 - 160,room_height/2 + 168 - 20, 320,48,'Improve',-1,0,'')
+        if button(spr_button,room_width/2 - 160 - 160,room_height/2 + 168 - 20, 320,48,'Try Again',-1,0,'')
             {
             scr_start_stage()
             with obj_tree
@@ -371,7 +380,7 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
             
             }
         */
-        if button(spr_button,room_width/2 - 160 + 160,room_height/2 + 168 - 20, 320,48,'Next Stage',-1,0,'')
+        if button(spr_button,room_width/2 - 160 + 160,room_height/2 + 168 - 20, 320,48,'Continue',-1,0,'')
             {
             tab = 1
             instance_activate_object(obj_tree)
@@ -383,13 +392,15 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
     if tab = 1 //SHOW QUIZ QUESTION TAB
         {
         draw_set_halign(fa_left)
-        draw_set_valign(fa_center) 
+        draw_set_valign(fa_top) 
         draw_set_font(fnt_message)
         draw_sprite(spr_message_large,0,room_width/2,room_height/2)
         draw_set_color(c_black)
-        //draw_text(room_width/2 - 440 , room_height/2 - 200 + 50, "Answer this question correctly to get $100 more Carbon Cash!##"+question[current_question]) //, c_black,c_white)
-        tstr = "Answer this question correctly to get $100 more Carbon Cash!##"+question[current_question]
-        scr_paragraph(tstr,room_width/2 - 440 , room_height/2 - 200 , 800, c_black)
+        
+        draw_text(room_width/2 - 440 , room_height/2 - 240, "Answer this question correctly to get $100 more Carbon Cash!") //, c_black,c_white)
+        //"Answer this question correctly to get $100 more Carbon Cash!##"+
+        tstr = question[current_question]
+        scr_paragraph(tstr,room_width/2 - 440 , room_height/2 - 220 + 50, 800, c_black)
         if answer &gt; -1
         if button(spr_button,room_width/2 - 160,room_height / 2 + 220, 320,48,'Submit',-1,0,'')
             {

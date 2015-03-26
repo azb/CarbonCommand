@@ -58,7 +58,7 @@
     <sprite>sprites\spr_leaf_explosion</sprite>
     <sprite>sprites\spr_ammo_bar_large</sprite>
     <sprite>sprites\spr_ammo_bar_small</sprite>
-    <sprite>sprites\spr_factory</sprite>
+    <sprite>sprites\spr_house</sprite>
     <sprite>sprites\spr_button</sprite>
     <sprite>sprites\spr_button_tab</sprite>
     <sprite>sprites\spr_button_upgrade</sprite>
@@ -79,6 +79,7 @@
     <sprite>sprites\spr_message</sprite>
     <sprite>sprites\spr_message_large</sprite>
     <sprite>sprites\sprite38_OilRig_Asset</sprite>
+    <sprite>sprites\spr_power_plant</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -180,6 +181,7 @@
     <script>scripts\scr_upgrade_item.gml</script>
     <script>scripts\scr_paragraph_string.gml</script>
     <script>scripts\scr_add_question.gml</script>
+    <script>scripts\scr_carbon_hit.gml</script>
     <script>scripts\scr_paragraph.gml</script>
   </scripts>
   <fonts name="fonts">
@@ -201,7 +203,8 @@
     <object>objects\obj_tree</object>
     <object>objects\obj_tree2</object>
     <object>objects\obj_tree3</object>
-    <object>objects\obj_factory</object>
+    <object>objects\obj_house</object>
+    <object>objects\obj_power_plant</object>
     <object>objects\obj_leaf_explosion</object>
     <object>objects\obj_coral</object>
     <object>objects\obj_bullet</object>

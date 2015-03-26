@@ -86,8 +86,8 @@ instance_destroy()
 effect_create_above(ef_smoke,x,y,1,c_white)
 
 instance_create(x,y,obj_leaf_explosion)
-score++
-global.cash += 10
+
+scr_carbon_hit()
 </string>
           </argument>
         </arguments>

@@ -71,9 +71,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with other instance_destroy()
+            <string>scr_carbon_hit()
+instance_create(other.x,other.y,obj_leaf_explosion)
 
-score++
+with other instance_destroy()
+
+
 </string>
           </argument>
         </arguments>
