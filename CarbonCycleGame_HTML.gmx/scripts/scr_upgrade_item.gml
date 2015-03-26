@@ -37,6 +37,7 @@ if obj_control.gameover && obj_control.tab = 3
         {
         if position_meeting(mouse_x,mouse_y,self)
             {
+            obj_selectable.selected = 0
             selected = 1
             }
         else if !scr_in_mouse_zone()

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_selectable</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -40,7 +40,7 @@ depth = -y
 selected = 0
 upgrades = 1
 
-upgrade[0] = "Solar Panels Upgrade#Retrofit this house with some solar panels to make it produce less carbon!"
+upgrade[0] = "Bigger Leaves Upgrade#Retrofit this house with some solar panels to make it produce less carbon!"
 upgrade[1] = ""
 
 upgrade_coefficient = 85 * 2

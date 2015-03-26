@@ -202,6 +202,7 @@
     <object>objects\shared_Tweener</object>
     <object>objects\obj_carbon</object>
     <object>objects\obj_control</object>
+    <object>objects\obj_selectable</object>
     <object>objects\obj_tree</object>
     <object>objects\obj_tree2</object>
     <object>objects\obj_tree3</object>

@@ -57,7 +57,7 @@ answer = -1
 questions = 0
 
 question[0] = "What causes global warming?"
-current_question = irandom(10)
+current_question = irandom(9)
 answers = 4
 
 scr_add_question("Which of these is not a Greenhouse gas?",
@@ -209,16 +209,16 @@ flash_a += flash_dir
 
 //SEA LEVEL RISE
 if background_y[2] &lt; actual_back_y // = adjust(background_y[2] , actual_back_y)
-background_y[2] += .25
+background_y[2] += .5
 if background_y[2] &gt; actual_back_y // = adjust(background_y[2] , actual_back_y)
-background_y[2] -= .25
+background_y[2] -= .5
 
-actual_back_y = by_start - global.carbon / 2 // 10 * 5
-if actual_back_y &lt; by_start - 200
-actual_back_y = by_start - 200
+actual_back_y = by_init - global.carbon // 10 * 5
+if actual_back_y &lt; by_init - 250
+actual_back_y = by_init - 250
 
-if background_y[2] &lt; by_start - 500
-background_y[2] = by_start - 500
+//if background_y[2] &lt; by_init - 500
+//background_y[2] = by_init - 500
 /*
 if keyboard_check_pressed(vk_left) {
     with obj_tree
@@ -353,13 +353,14 @@ draw_rectangle(37,97,60,ypos,0)
 
 //Carbon Bar
 
-draw_sprite(spr_carbon_bar,0,room_width - 100 , 0)
+//draw_sprite(spr_carbon_bar,0,room_width - 100 , 0)
 
 //Show mouse position coordinates
 //draw_set_halign(fa_left)draw_set_valign(fa_right)draw_text(mouse_x+32,mouse_y+32,string(mouse_x)+","+string(mouse_y))
 
 // - global.temperature / 20 * 130
 
+//if actual_back_y &lt; by_init - 250
 if actual_back_y &lt;= by_init - 200 //global.temperature &gt; 20 //LOSE
     {
     gameover = 1
