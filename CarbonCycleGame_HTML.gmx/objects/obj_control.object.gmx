@@ -537,7 +537,7 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
         draw_text_outlined(room_width/2 , room_height/2 - 430 , "Purchase Upgrades##Select an item to upgrade.", c_white,c_black)
-        if button(spr_button,room_width - 480,room_height - 96, 320,48,'Start Next Stage',-1,0,'')
+        if button(spr_button,room_width - 480,room_height - 96, 320,48,'Start Next Level',-1,0,'')
             {
             tab = 0
             scr_start_stage()

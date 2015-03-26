@@ -39,11 +39,11 @@ depth = -y
 selected = 0
 upgrades = 1
 
-upgrade[0] = "Double Ammo Upgrade#Demolish this coal fired power plant and replace it with a wind turbine to cut in half your reload time!"
+upgrade[0] = "Double Speed Upgrade#Demolish this coal fired power plant and replace it with a wind turbine to reduce it's carbon footprint!"
 upgrade[1] = ""
 
-upgrade_coefficient = 85 * 7
-upgrade_initial_cost = 125 * 9
+upgrade_coefficient = 85 * 6
+upgrade_initial_cost = 125 * 8
 
 
 </string>
