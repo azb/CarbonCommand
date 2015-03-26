@@ -38,13 +38,16 @@ selected = 0
 
 upgrades = 2
 
-upgrade[0] = "Rapid Shot Upgrade#Upgrade this slow-growing pine tree to a slightly faster growing oak tree to make it absorb more carbon!"
-upgrade[1] = "Double Shot Upgrade#Upgrade this oak tree to a faster growing yellow poplar tree to make it absorb even more carbon!"
+upgrade[0] = "Double Shot Upgrade#Upgrade this slow-growing pine tree to a slightly faster growing oak tree to make it absorb more carbon!"
+upgrade[1] = "Triple Shot Upgrade#Upgrade this oak tree to a faster growing yellow poplar tree to make it absorb even more carbon!"
 
-upgrade_coefficient = 75
-upgrade_initial_cost = 75
+upgrade_coefficient = 75*2
+upgrade_initial_cost = 75*3
 
 reload_time = 10
+
+
+shots = 0
 </string>
           </argument>
         </arguments>
@@ -69,11 +72,15 @@ reload_time = 10
             <kind>1</kind>
             <string>effect_create_above(ef_spark,x,y - 64,1,c_lime)
 nb = instance_create(x,y - 64,obj_bullet)
-nb.direction = point_direction(nb.x,nb.y,mouse_x,mouse_y)
+nb.direction = point_direction(nb.x,nb.y,tx,ty)
 nb.image_angle = nb.direction
 nb.speed = 10
 nb.tx = tx
 nb.ty = ty
+shots--
+
+if shots &gt; 0
+alarm[1] = 4
 </string>
           </argument>
         </arguments>
@@ -136,8 +143,11 @@ nb.ty = ty
             {
             cfire = 0
             alarm[0] = reload_time
-            //if image_index = 1
-            //alarm[1] = 3
+            if image_index &gt; 0
+                {
+                alarm[1] = 4
+                shots = image_index
+                }
             effect_create_above(ef_spark,x,y - 64,1,c_lime)
             nb = instance_create(x,y - 64,obj_bullet)
             nb.direction = point_direction(nb.x,nb.y,mouse_x,mouse_y)

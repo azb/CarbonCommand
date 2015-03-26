@@ -43,8 +43,8 @@ upgrades = 1
 upgrade[0] = "Solar Panels Upgrade#Retrofit this house with some solar panels to make it produce less carbon!"
 upgrade[1] = ""
 
-upgrade_coefficient = 85
-upgrade_initial_cost = 125
+upgrade_coefficient = 85 * 2
+upgrade_initial_cost = 125 * 4
 
 
 </string>

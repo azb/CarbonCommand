@@ -80,6 +80,8 @@
     <sprite>sprites\spr_message_large</sprite>
     <sprite>sprites\sprite38_OilRig_Asset</sprite>
     <sprite>sprites\spr_power_plant</sprite>
+    <sprite>sprites\spr_upgrade_icon_double_shot</sprite>
+    <sprite>sprites\spr_carbon_bar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>

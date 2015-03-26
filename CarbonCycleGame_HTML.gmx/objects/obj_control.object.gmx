@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.temperature = 0
+            <string>absorbed = 0
+global.temperature = 0
 global.carbon = 0
 
 scr_init_mouse_zones()
@@ -42,6 +43,7 @@ global.cash = 0
 global.carbon = 0
 
 scr_start_stage()
+by_init = by_start
 tab = 0
 
 level = 0
@@ -165,17 +167,18 @@ answer_text[3] = "Laughing"
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
             <string>///CREATE C02
+if !gameover
 if carbon_left &gt; 0
     {
     alarm[0] = 20
-    instance_create(random(room_width) , -8 , obj_carbon)
+    instance_create(random(room_width-200)+100 , -8 , obj_carbon)
     carbon_left--
     }
 </string>
@@ -348,12 +351,16 @@ if ypos &lt; 97
 ypos = 97
 draw_rectangle(37,97,60,ypos,0)
 
+//Carbon Bar
+
+draw_sprite(spr_carbon_bar,0,room_width - 100 , 0)
+
 //Show mouse position coordinates
 //draw_set_halign(fa_left)draw_set_valign(fa_right)draw_text(mouse_x+32,mouse_y+32,string(mouse_x)+","+string(mouse_y))
 
 // - global.temperature / 20 * 130
 
-if actual_back_y &lt; by_start - 200 //global.temperature &gt; 20 //LOSE
+if actual_back_y &lt;= by_init - 200 //global.temperature &gt; 20 //LOSE
     {
     gameover = 1
     draw_set_color(c_black)
@@ -362,11 +369,12 @@ if actual_back_y &lt; by_start - 200 //global.temperature &gt; 20 //LOSE
     draw_set_font(fnt_large)
     draw_text(room_width/2 , room_height/2 , "Oh noes! Earth got flooded!")
     draw_set_font(fnt_default)
-    if button(spr_button,room_width/2-160,room_height/2 + 128, 320,48,'Restart',-1,0,'')
+    if button(spr_button,room_width/2-160,room_height/2 + 128, 320,48,'Play Again',-1,0,'')
         {
-        global.temperature = 0
-        global.carbon = 0
-        scr_start_stage()
+        //global.temperature = 0
+        //global.carbon = 0
+        //scr_start_stage()
+        room_restart()
         }
     }
 else
@@ -391,7 +399,8 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         draw_sprite(spr_message_large,0,room_width/2,room_height/2)
         draw_text_outlined(room_width/2 , room_height/2 - 100 , "Stage Completed!", c_white,c_black)
         draw_set_font(fnt_default)
-        draw_text_outlined(room_width/2 , room_height/2 + 96 - 50 , "CO2 Absorbed: "+string(carbon_start - global.temperature)+'/'+string(carbon_start)
+        //carbon_start - global.temperature
+        draw_text_outlined(room_width/2 , room_height/2 + 96 - 50 , "CO2 Absorbed: "+string(absorbed)+'/'+string(carbon_start)
             +"#Carbon Cash: $"+string(global.cash), c_white,c_black)
         if button(spr_button,room_width/2 - 160 - 160,room_height/2 + 168 - 20, 320,48,'Try Again',-1,0,'')
             {
