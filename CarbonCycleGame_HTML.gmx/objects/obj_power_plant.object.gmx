@@ -42,8 +42,8 @@ upgrades = 1
 upgrade[0] = "Double Ammo Upgrade#Demolish this coal fired power plant and replace it with a wind turbine to cut in half your reload time!"
 upgrade[1] = ""
 
-upgrade_coefficient = 85 * 5
-upgrade_initial_cost = 125 * 5
+upgrade_coefficient = 85 * 7
+upgrade_initial_cost = 125 * 9
 
 
 </string>

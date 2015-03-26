@@ -42,11 +42,11 @@ global.cash = 0
 //C02 LEVELS
 global.carbon = 0
 
+level = 0
+
 scr_start_stage()
 by_init = by_start
 tab = 0
-
-level = 0
 
 //carbon_left = 0
 //alarm[0] = -1
@@ -69,7 +69,7 @@ scr_add_question("Which of these is not a Greenhouse gas?",
 scr_add_question("Sea levels are rising because",
     "Melting of sea ice",
     "Increases in rainfall",
-    "Glaciers melting",
+    "Glaciers are melting",
     "All of the above",
     3)
 scr_add_question("Today's current concentration of atmospheric carbon dioxide (CO2) is around",
@@ -368,7 +368,8 @@ if actual_back_y &lt;= by_init - 200 //global.temperature &gt; 20 //LOSE
     draw_set_halign(fa_center)
     draw_set_valign(fa_center)    
     draw_set_font(fnt_large)
-    draw_text(room_width/2 , room_height/2 , "Oh noes! Earth got flooded!")
+    draw_sprite(spr_message_large,0,room_width/2 , room_height/2)
+    draw_text(room_width/2 , room_height/2 - 96 , "Oh noes! Earth got flooded!##Final Score: "+string(score))
     draw_set_font(fnt_default)
     if button(spr_button,room_width/2-160,room_height/2 + 128, 320,48,'Play Again',-1,0,'')
         {
@@ -398,24 +399,25 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)    
         draw_sprite(spr_message_large,0,room_width/2,room_height/2)
-        draw_text_outlined(room_width/2 , room_height/2 - 100 , "Stage Completed!", c_white,c_black)
+        draw_text_outlined(room_width/2 , room_height/2 - 100 , "Level " + string(level + 1) +" Completed!", c_white,c_black)
         draw_set_font(fnt_default)
         //carbon_start - global.temperature
         draw_text_outlined(room_width/2 , room_height/2 + 96 - 50 , "CO2 Absorbed: "+string(absorbed)+'/'+string(carbon_start)
             +"#Carbon Cash: $"+string(global.cash), c_white,c_black)
+            /*
         if button(spr_button,room_width/2 - 160 - 160,room_height/2 + 168 - 20, 320,48,'Try Again',-1,0,'')
             {
             scr_start_stage()
             with obj_tree
             ammo = ammo_max
-            }
+            }*/
         /*
         if button(spr_button,room_width/2 - 160 ,room_height/2 + 128, 320,48,'Upgrades',-1,0,'')
             {
             
             }
         */
-        if button(spr_button,room_width/2 - 160 + 160,room_height/2 + 168 - 20, 320,48,'Continue',-1,0,'')
+        if button(spr_button,room_width/2 - 160,room_height/2 + 168 - 20, 320,48,'Continue',-1,0,'')
             {
             tab = 1
             instance_activate_object(obj_tree)
@@ -485,6 +487,8 @@ if instance_number(obj_carbon) = 0 &amp;&amp; carbon_left = 0 //WIN
         }
     if tab = 3 //UPGRADES TAB
         {
+        with obj_tree
+        ammo = ammo_max
         draw_sprite(spr_message,0,room_width/2 , room_height/2 - 500)
         draw_set_halign(fa_center)
         draw_set_valign(fa_center)
