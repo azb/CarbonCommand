@@ -83,6 +83,8 @@
     <sprite>sprites\spr_carbon_bar</sprite>
     <sprite>sprites\spr_green_ninja</sprite>
     <sprite>sprites\spr_car</sprite>
+    <sprite>sprites\spr_sea_weed</sprite>
+    <sprite>sprites\spr_current</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_welcome</background>
@@ -92,7 +94,9 @@
     <background>background\background7</background>
     <background>background\back_water</background>
     <background>background\back_water_back</background>
+    <background>background\back_ocean</background>
     <background>background\back_clouds</background>
+    <background>background\back_bubbles</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -185,6 +189,7 @@
     <script>scripts\scr_paragraph_string.gml</script>
     <script>scripts\scr_add_question.gml</script>
     <script>scripts\scr_carbon_hit.gml</script>
+    <script>scripts\scr_upgrade_item_create.gml</script>
     <script>scripts\scr_paragraph.gml</script>
   </scripts>
   <fonts name="fonts">
@@ -201,10 +206,13 @@
       <object>objects\ctr_game</object>
     </objects>
     <object>objects\shared_Tweener</object>
+    <object>objects\obj_background_carbon</object>
     <object>objects\obj_carbon</object>
     <object>objects\obj_control</object>
     <object>objects\obj_selectable</object>
     <object>objects\obj_tree</object>
+    <object>objects\obj_seathing</object>
+    <object>objects\obj_current</object>
     <object>objects\obj_tree2</object>
     <object>objects\obj_tree3</object>
     <object>objects\obj_house</object>
@@ -217,7 +225,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_game</room>
+    <room>rooms\rm_ocean</room>
+    <room>rooms\rm_land</room>
     <room>rooms\rm_main</room>
   </rooms>
   <constants number="13">

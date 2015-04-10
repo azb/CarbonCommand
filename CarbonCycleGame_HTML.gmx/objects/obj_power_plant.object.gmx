@@ -25,11 +25,12 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//alarm[1] = 15
+            <string>scr_upgrade_item_create()
+//alarm[1] = 15
 
 image_index = 0// irandom(image_number)
 //if image_index = 0
-//alarm[0] = 10
+alarm[0] = 10
 
 image_speed = 0
 
@@ -119,10 +120,11 @@ else
             <kind>1</kind>
             <string>if fps &gt; 28
 {
-nc = instance_create(x,y,obj_carbon)
+nc = instance_create(x + 16,y - 128,obj_background_carbon)
 nc.vspeed = -1
 nc.hspeed = random(1) - .5
 }
+if image_index = 0
 alarm[0] = 50
 </string>
           </argument>
