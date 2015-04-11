@@ -57,7 +57,7 @@ vspeed = -1
 if y &lt; 200
 vspeed = 1
 */
-if y &gt; room_height - 50
+if y &gt; room_height - 200
     {
     global.temperature += 1
     
