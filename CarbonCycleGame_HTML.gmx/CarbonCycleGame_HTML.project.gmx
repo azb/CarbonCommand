@@ -205,10 +205,13 @@
       <object>objects\ctr_splash</object>
       <object>objects\ctr_game</object>
     </objects>
+    <objects name="Other Control Objects">
+      <object>objects\obj_control</object>
+      <object>objects\obj_control_main_menu</object>
+    </objects>
     <object>objects\shared_Tweener</object>
     <object>objects\obj_background_carbon</object>
     <object>objects\obj_carbon</object>
-    <object>objects\obj_control</object>
     <object>objects\obj_selectable</object>
     <object>objects\obj_tree</object>
     <object>objects\obj_seathing</object>
@@ -225,6 +228,7 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_ocean</room>
     <room>rooms\rm_land</room>
     <room>rooms\rm_main</room>
