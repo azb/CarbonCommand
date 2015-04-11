@@ -55,6 +55,7 @@
     <sprite>sprites\spr_coral</sprite>
     <sprite>sprites\spr_ice</sprite>
     <sprite>sprites\spr_leaf_explosion</sprite>
+<<<<<<< HEAD
     <sprite>sprites\spr_leaf_explosion_big</sprite>
     <sprites name="Interface">
       <sprite>sprites\spr_ammo_bar_small</sprite>
@@ -78,6 +79,10 @@
       <sprite>sprites\spr_ammobar_oak</sprite>
       <sprite>sprites\spr_score_bar</sprite>
     </sprites>
+=======
+    <sprite>sprites\spr_ammo_bar_large</sprite>
+    <sprite>sprites\spr_ammo_bar_small</sprite>
+>>>>>>> origin/master
     <sprite>sprites\spr_house</sprite>
     <sprite>sprites\sprite33</sprite>
     <sprite>sprites\spr_boat_asset</sprite>
@@ -189,7 +194,6 @@
     <script>scripts\scr_init_mouse_zones.gml</script>
     <script>scripts\inregion.gml</script>
     <script>scripts\scr_upgrade_item.gml</script>
-    <script>scripts\scr_upgrade_item_message.gml</script>
     <script>scripts\scr_paragraph_string.gml</script>
     <script>scripts\scr_add_question.gml</script>
     <script>scripts\scr_carbon_hit.gml</script>
@@ -225,7 +229,6 @@
     <object>objects\obj_house</object>
     <object>objects\obj_car</object>
     <object>objects\obj_power_plant</object>
-    <object>objects\obj_oil_rig</object>
     <object>objects\obj_leaf_explosion</object>
     <object>objects\obj_coral</object>
     <object>objects\obj_bullet</object>
@@ -237,6 +240,7 @@
     <room>rooms\rm_land</room>
     <room>rooms\rm_main_menu</room>
     <room>rooms\rm_main</room>
+    <room>rooms\rm_tutorial</room>
   </rooms>
   <constants number="13">
     <constant name="PORTRAIT">1</constant>

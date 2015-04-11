@@ -82,12 +82,26 @@ mouse_clicked_y = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
+            <string>
 if mouse_check_button(mb_left)
 {
     mouse_clicked_x = mouse_x
     mouse_clicked_y = mouse_y
-    if (mouse_clicked_x &gt; start_button_x1 and mouse_clicked_x &lt; )
+    if (mouse_clicked_x &gt; start_button_x1 and mouse_clicked_x &lt; start_button_x2) and
+       (mouse_clicked_y &gt; start_button_y1 and mouse_clicked_y &lt; start_button_y2) 
+    {
+        room_goto(rm_land)
+    }
+    else if (mouse_clicked_x &gt; tutorial_button_x1 and mouse_clicked_x &lt; tutorial_button_x2) and
+       (mouse_clicked_y &gt; tutorial_button_y1 and mouse_clicked_y &lt; tutorial_button_y2) 
+    {
+        room_goto(rm_tutorial)
+    }
+    else if (mouse_clicked_x &gt; exit_button_x1 and mouse_clicked_x &lt; exit_button_x2) and
+       (mouse_clicked_y &gt; exit_button_y1 and mouse_clicked_y &lt; exit_button_y2) 
+    {
+        game_end()
+    }
 }
 </string>
           </argument>
