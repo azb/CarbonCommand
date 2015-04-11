@@ -57,6 +57,7 @@
     <sprite>sprites\spr_thermometer</sprite>
     <sprite>sprites\spr_ice</sprite>
     <sprite>sprites\spr_leaf_explosion</sprite>
+    <sprite>sprites\spr_leaf_explosion_big</sprite>
     <sprite>sprites\spr_ammo_bar_large</sprite>
     <sprite>sprites\spr_ammo_bar_small</sprite>
     <sprite>sprites\spr_house</sprite>
@@ -186,6 +187,7 @@
     <script>scripts\scr_init_mouse_zones.gml</script>
     <script>scripts\inregion.gml</script>
     <script>scripts\scr_upgrade_item.gml</script>
+    <script>scripts\scr_upgrade_item_message.gml</script>
     <script>scripts\scr_paragraph_string.gml</script>
     <script>scripts\scr_add_question.gml</script>
     <script>scripts\scr_carbon_hit.gml</script>
@@ -221,6 +223,7 @@
     <object>objects\obj_house</object>
     <object>objects\obj_car</object>
     <object>objects\obj_power_plant</object>
+    <object>objects\obj_oil_rig</object>
     <object>objects\obj_leaf_explosion</object>
     <object>objects\obj_coral</object>
     <object>objects\obj_bullet</object>

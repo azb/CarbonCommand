@@ -174,11 +174,7 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_upgrade_item()
-
-draw_self()
-    
-</string>
+            <string></string>
           </argument>
         </arguments>
       </action>

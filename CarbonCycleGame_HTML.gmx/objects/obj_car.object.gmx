@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_upgrade_item_create()
+            <string>m = 1
+
+scr_upgrade_item_create()
 
 //alarm[1] = 15
 
@@ -148,10 +150,18 @@ alarm[0] = 50
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if y &gt; background_y[2] + 800 - 255
-{
-instance_destroy()
-}
+            <string>if obj_control.gameover = 0
+hspeed = m
+else
+{speed = 0 x = xstart}
+if y &gt; background_y[2] + 800 - 255
+    {
+    instance_destroy()
+    }
+if x &gt; xstart + 200 {hspeed = -1 m = -1}
+if x &lt; xstart - 200 {hspeed = 1 m = 1}
+
+
 </string>
           </argument>
         </arguments>
@@ -174,9 +184,12 @@ instance_destroy()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_upgrade_item()
+            <string>
+    scr_upgrade_item()
+    
+    draw_sprite_ext(sprite_index,0,x,y,m,1,0,c_white,1)
 
-draw_self()
+    scr_upgrade_item_message()
     
 </string>
           </argument>
