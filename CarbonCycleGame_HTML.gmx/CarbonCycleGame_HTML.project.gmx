@@ -53,35 +53,37 @@
     <sprite>sprites\spr_tree2</sprite>
     <sprite>sprites\spr_tree3</sprite>
     <sprite>sprites\spr_coral</sprite>
-    <sprite>sprites\spr_thermometer2</sprite>
-    <sprite>sprites\spr_thermometer</sprite>
     <sprite>sprites\spr_ice</sprite>
     <sprite>sprites\spr_leaf_explosion</sprite>
     <sprite>sprites\spr_leaf_explosion_big</sprite>
-    <sprite>sprites\spr_ammo_bar_large</sprite>
-    <sprite>sprites\spr_ammo_bar_small</sprite>
+    <sprites name="Interface">
+      <sprite>sprites\spr_ammo_bar_small</sprite>
+      <sprite>sprites\spr_radio</sprite>
+      <sprite>sprites\spr_thermometer2</sprite>
+      <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\spr_thermometer</sprite>
+      <sprite>sprites\spr_button_upgrade</sprite>
+      <sprite>sprites\spr_button_tab</sprite>
+      <sprite>sprites\spr_button_too_expensive</sprite>
+      <sprite>sprites\spr_upgrade_ring</sprite>
+      <sprite>sprites\spr_select_highlight</sprite>
+      <sprite>sprites\spr_message</sprite>
+      <sprite>sprites\spr_message_large</sprite>
+      <sprite>sprites\spr_ammo_bar_large</sprite>
+      <sprite>sprites\spr_carbon_bar</sprite>
+      <sprite>sprites\spr_scorebar</sprite>
+      <sprite>sprites\spr_ammobar_outline_oak</sprite>
+      <sprite>sprites\spr_cashbar</sprite>
+      <sprite>sprites\spr_carbon_cash_bar</sprite>
+      <sprite>sprites\spr_ammobar_oak</sprite>
+      <sprite>sprites\spr_score_bar</sprite>
+    </sprites>
     <sprite>sprites\spr_house</sprite>
-    <sprite>sprites\spr_button</sprite>
-    <sprite>sprites\spr_button_tab</sprite>
-    <sprite>sprites\spr_button_upgrade</sprite>
-    <sprite>sprites\spr_button_too_expensive</sprite>
-    <sprite>sprites\spr_radio</sprite>
-    <sprite>sprites\spr_cashbar</sprite>
-    <sprite>sprites\spr_scorebar</sprite>
-    <sprite>sprites\spr_ammobar_outline_oak</sprite>
-    <sprite>sprites\spr_select_highlight</sprite>
-    <sprite>sprites\spr_upgrade_ring</sprite>
     <sprite>sprites\sprite33</sprite>
-    <sprite>sprites\spr_ammobar_oak</sprite>
-    <sprite>sprites\sprite35_Boat_Asset</sprite>
-    <sprite>sprites\spr_carbon_cash_bar</sprite>
-    <sprite>sprites\spr_score_bar</sprite>
-    <sprite>sprites\spr_message</sprite>
-    <sprite>sprites\spr_message_large</sprite>
-    <sprite>sprites\sprite38_OilRig_Asset</sprite>
+    <sprite>sprites\spr_boat_asset</sprite>
+    <sprite>sprites\spr_oil_rig_asset</sprite>
     <sprite>sprites\spr_power_plant</sprite>
     <sprite>sprites\spr_upgrade_icon_double_shot</sprite>
-    <sprite>sprites\spr_carbon_bar</sprite>
     <sprite>sprites\spr_green_ninja</sprite>
     <sprite>sprites\spr_car</sprite>
     <sprite>sprites\spr_sea_weed</sprite>
@@ -231,9 +233,9 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_ocean</room>
     <room>rooms\rm_land</room>
+    <room>rooms\rm_main_menu</room>
     <room>rooms\rm_main</room>
   </rooms>
   <constants number="13">

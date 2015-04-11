@@ -3,8 +3,8 @@
   <caption></caption>
   <width>1920</width>
   <height>1080</height>
-  <vsnap>8</vsnap>
-  <hsnap>8</hsnap>
+  <vsnap>320</vsnap>
+  <hsnap>96</hsnap>
   <isometric>0</isometric>
   <speed>30</speed>
   <persistent>0</persistent>
@@ -34,7 +34,7 @@
     <background visible="0" foreground="0" name="back_water_back" x="0" y="200" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="-1"/>
     <background visible="-1" foreground="0" name="back_ocean" x="0" y="0" htiled="0" vtiled="0" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="-1" foreground="0" name="back_bubbles" x="0" y="450" htiled="-1" vtiled="0" hspeed="1" vspeed="0" stretch="0"/>
-    <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
+    <background visible="-1" foreground="0" name="back_bubbles" x="0" y="450" htiled="-1" vtiled="0" hspeed="2" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
     <background visible="0" foreground="0" name="" x="0" y="0" htiled="-1" vtiled="-1" hspeed="0" vspeed="0" stretch="0"/>
@@ -56,9 +56,9 @@
     <instance objName="obj_house" x="776" y="352" name="inst_D5342373" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_power_plant" x="1092" y="336" name="inst_2A3AA580" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_car" x="912" y="344" name="inst_16042414" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_seathing" x="640" y="968" name="inst_2025B2CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_seathing" x="1028" y="972" name="inst_167011AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_seathing" x="1436" y="980" name="inst_6A53FA0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_seathing" x="480" y="960" name="inst_2025B2CC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_seathing" x="960" y="960" name="inst_167011AB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_seathing" x="1440" y="960" name="inst_6A53FA0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_current" x="0" y="448" name="inst_FCB2910F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_oil_rig" x="1592" y="400" name="inst_CDE6C196" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>

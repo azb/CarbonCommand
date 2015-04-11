@@ -21,5 +21,6 @@
   <height>64</height>
   <frames>
     <frame index="0">images\spr_upgrade_icon_double_shot_0.png</frame>
+    <frame index="1">images\spr_upgrade_icon_double_shot_1.png</frame>
   </frames>
 </sprite>
